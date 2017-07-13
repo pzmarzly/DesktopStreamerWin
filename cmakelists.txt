@@ -3,7 +3,7 @@ project(WinClient VERSION 0.0.0)
 
 set(EXECUTABLE_OUTPUT_PATH "build")
 
-set(CMAKE_C_COMPILER "gcc")
+set(CMAKE_C_COMPILER "mingw32-gcc")
 if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release)
 endif()
