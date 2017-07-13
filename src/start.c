@@ -16,8 +16,8 @@ int main(ARGCNV) {
     WinSockStart();
 
     TryStopProcess();
-    PingTheReceiver(argcnv);
     RunProcess();
+    PingTheReceiver(argcnv);
 
     WinSockClose();
     return 0;
