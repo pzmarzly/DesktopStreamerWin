@@ -91,7 +91,9 @@ int TrySend(ZL_ulong IP, ZL_ushort port, ZL_cstring message, ZL_ulong max_ping) 
 // TODO: do not ping localhost
 void TryBroadcastNetwork(ZL_ulong start, ZL_ulong len, ZL_ushort port, ZL_cstring message, ZL_ulong max_ping) {
     LDEBUG("Starting scanning network %ldL, %ld elements\n", start, len);
-    clock_t currentTime = clock();
+    #if DEBUG
+        clock_t currentTime = clock();
+    #endif
 
     omp_set_dynamic(0);
     omp_set_num_threads(len);
