@@ -1,6 +1,6 @@
 # Desktop Streamer (Windows version)
 
-## C utility to start a desktop stream with VLC and broadcast it fact over TCP
+## C utility to start a desktop stream with VLC and broadcast the fact over TCP
 
 Made with Raspberry Pi integration in mind, default configuration is compatible with Pi Zero W.
 
@@ -45,3 +45,4 @@ I've included Visual Studio Code settings for quick building with Ctrl-Shift-B.
 # Limitations
 
 - this program will behave unexpectedly if the config file is corrupt/incorrect
+- only IPv4 addresses are supported
