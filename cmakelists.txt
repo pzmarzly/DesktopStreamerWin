@@ -45,6 +45,11 @@ list(APPEND StopSources
 add_executable(start ${StartSources} ${CommonSources})
 add_executable(stop ${StopSources} ${CommonSources})
 
+if(USE_MESSAGEBOX_GUI)
+    set_property(TARGET start PROPERTY WIN32_EXECUTABLE true)
+    set_property(TARGET stop PROPERTY WIN32_EXECUTABLE true)
+endif()
+
 target_link_libraries(start ${CommonLibraries})
 target_link_libraries(stop ${CommonLibraries})
 
