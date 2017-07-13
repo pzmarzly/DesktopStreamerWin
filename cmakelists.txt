@@ -1,0 +1,43 @@
+cmake_minimum_required(VERSION 3.0.0)
+project(WinClient VERSION 0.0.0)
+
+set(EXECUTABLE_OUTPUT_PATH "build")
+
+set(CMAKE_C_COMPILER "gcc")
+if(NOT CMAKE_BUILD_TYPE)
+  set(CMAKE_BUILD_TYPE Release)
+endif()
+set(CMAKE_C_FLAGS "-Wall -Wextra -Wno-comment -Wno-unused-parameter")
+set(CMAKE_C_FLAGS_DEBUG "-DDEBUG")
+set(CMAKE_C_FLAGS_RELEASE "-O3")
+
+list(APPEND CommonSources
+    "src/config.h"
+    "src/config.c"
+    "src/default_config.h"
+    "src/utils/file.c"
+    "src/utils/file.h"
+    "src/utils/macros.h"
+    "src/utils/networking.c"
+    "src/utils/networking.h"
+    "src/utils/settings.h"
+    "src/functions/common.c"
+    "src/functions/common.h"
+    "src/functions/string.c"
+    "src/functions/string.h")
+
+list(APPEND CommonLibraries
+    "-lws2_32"
+    "-liphlpapi")
+
+list(APPEND StartSources
+    "src/start.c"
+    "src/functions/start.c"
+    "src/functions/start.h")
+
+add_executable(start ${StartSources} ${CommonSources})
+
+target_link_libraries(start ${CommonLibraries})
+
+find_package(OpenMP)
+set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${OpenMP_C_FLAGS}")

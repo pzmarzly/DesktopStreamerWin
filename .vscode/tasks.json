@@ -1,0 +1,47 @@
+{
+    // https://code.visualstudio.com/docs/editor/tasks#_defining-a-problem-matcher - GCC config
+    "version": "2.0.0",
+    "tasks": [{
+            "taskName": "Build (debug)",
+            "group": "build",
+            "type": "shell",
+            "command": "rd /S /Q build && mkdir build && cmake -G Ninja -DCMAKE_BUILD_TYPE=Debug && ninja",
+            "problemMatcher": {
+                "owner": "cpp",
+                "fileLocation": ["relative", "${workspaceRoot}"],
+                "pattern": {
+                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3,
+                    "severity": 4,
+                    "message": 5
+                }
+            },
+            "presentation": {
+                "reveal": "silent"
+            }
+        },
+        {
+            "taskName": "Build (release)",
+            "group": "build",
+            "type": "shell",
+            "command": "rd /S /Q build && mkdir build && cmake -G Ninja -DCMAKE_BUILD_TYPE=Release && ninja",
+            "problemMatcher": {
+                "owner": "cpp",
+                "fileLocation": ["relative", "${workspaceRoot}"],
+                "pattern": {
+                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3,
+                    "severity": 4,
+                    "message": 5
+                }
+            },
+            "presentation": {
+                "reveal": "silent"
+            }
+        }
+    ]
+}

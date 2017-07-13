@@ -1,0 +1,20 @@
+First 64 characters (including spaces) in a line are ignored.
+Empty lines are NOT ignored. Lines shorter than 64 characters
+are ignored. Order of settings is important! Use CLRF (Windows
+default) line endings.
+
+Path to vlc.exe                                                 C:\Program Files (x86)\VideoLAN\VLC\vlc.exe
+Quality: bitrate (LAN speed)                             (kB/s) 8000
+Resolution: height (???p)                                       720
+Frames per second                                               25
+
+Maximum ping (latency)                                     (ms) 200
+
+Remote control port (any open on remote)              [1-65536] 8852
+Remote password                           (max 1024 characters) Hey! Wake up!
+Local control port (any free)                         [1-65536] 8853
+Video output port (any open on PC)                    [1-65536] 8854
+
+not implemented!
+Use static list of subnets                             [0 or 1] 0
+Static list of subnets         [like in command line arguments] 192.168.0.0 255
