@@ -14,6 +14,12 @@ void ManualForStart(ARGCNV) {
     printf("        program will broadcast to detected local networks\n");
 }
 
+void ManualForStop(ARGCNV) {
+    printf("Usage: %s\n", argv[0]);
+    printf("\n");
+    printf("This program will stop hidden local VLC streamer.\n");
+}
+
 void ErrorInvalidArgAmount(ARGCNV) {
     printf("Invalid amount of arguments!\n");
     printf("Run \"%s -h\" to show a manual.\n", argv[0]);

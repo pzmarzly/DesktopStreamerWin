@@ -35,9 +35,14 @@ list(APPEND StartSources
     "src/functions/start.c"
     "src/functions/start.h")
 
+list(APPEND StopSources
+    "src/stop.c")
+
 add_executable(start ${StartSources} ${CommonSources})
+add_executable(stop ${StopSources} ${CommonSources})
 
 target_link_libraries(start ${CommonLibraries})
+target_link_libraries(stop ${CommonLibraries})
 
 find_package(OpenMP)
 set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${OpenMP_C_FLAGS}")

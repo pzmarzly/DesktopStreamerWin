@@ -2,10 +2,11 @@
 
 int main(ARGCNV) {
     if (argc == 2 && strcmp(argv[1], "-h") == 0) {
-        PrintConsts();
-        ManualForStop(argc, argv);
+        ManualForStop(argcnv);
         return 0;
     }
+    Configure();
+
     WinSockStart();
 
     TryStopProcess();
