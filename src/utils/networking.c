@@ -53,7 +53,7 @@ int TrySend(ZL_ulong IP, ZL_ushort port, ZL_cstring message, ZL_ulong max_ping) 
             return 1;
         }
     } else {
-        LFATAL("TrySend - socket is blocking", 1);
+        LFATAL("Error in TrySend - socket is blocking", 1);
     }
 
     fd_set fdset;

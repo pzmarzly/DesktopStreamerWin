@@ -55,17 +55,17 @@ void RunProcess() {
     strcat(param_sout, program_config_video_port);
     strcat(param_sout, "/streamer.avi}\"");
 
-    _execl(
-       PROGRAM_CONFIG.VLC_EXE,
-       PROGRAM_CONFIG.VLC_EXE,
-       "-I", "dummy", // no GUI
-       "--dummy-quiet", // detach
-       "--extraintf", "rc", "--rc-host", param_local_control, "--rc-quiet", // RC
-       "-vvv", "screen://",
-       "--sout", param_sout,
-       "--sout-keep",
-       NULL   
+    int result = (int) _spawnl(
+        _P_NOWAIT,
+        PROGRAM_CONFIG.VLC_EXE,
+        PROGRAM_CONFIG.VLC_EXE,
+        "-I", "dummy", // no GUI
+        "--dummy-quiet", // detach
+        "--extraintf", "rc", "--rc-host", param_local_control, "--rc-quiet", // RC
+        "-vvv", "screen://",
+        "--sout", param_sout,
+        "--sout-keep",
+        NULL   
     );
-    // _execl never returns unless an error occurs
-    LFATAL("_execl", errno);
+    if (result == -1) LFATAL("_execl", errno);
 }

@@ -2,9 +2,7 @@
 
 #include "../utils/macros.h"
 
-#include <stdio.h>
-
-void ManualForStart(ARGCNV);
-void ManualForStop(ARGCNV);
-void ErrorInvalidArgAmount(ARGCNV);
+void ManualForStart();
+void ManualForStop();
+void ErrorInvalidArgAmount();
 void ErrorConfig(int errorId);

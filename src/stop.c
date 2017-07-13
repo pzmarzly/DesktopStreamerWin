@@ -2,7 +2,7 @@
 
 int main(ARGCNV) {
     if (argc == 2 && strcmp(argv[1], "-h") == 0) {
-        ManualForStop(argcnv);
+        ManualForStop();
         return 0;
     }
     Configure();

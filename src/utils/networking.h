@@ -1,7 +1,5 @@
 #pragma once
 
-#include "macros.h"
-
 #include <stdio.h>
 #include <limits.h>
 
@@ -9,6 +7,8 @@
 #include <iphlpapi.h>
 
 #include <omp.h>
+
+#include "macros.h"
 
 #if DEBUG
     #include <time.h>

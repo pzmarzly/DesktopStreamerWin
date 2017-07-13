@@ -2,6 +2,8 @@
 
 #include <stdio.h>
 
+#include <Windows.h>
+
 #define CRLF "\r\n"
 
 typedef const char* ZL_cstring;
@@ -23,8 +25,15 @@ typedef unsigned short ZL_ushort;
 // free if exists
 #define SFREE(ptr) do { if(ptr) free(ptr); } while (0)
 
+// GUI
+#ifdef MESSAGEBOX_GUI
+#define PRINT(msg) MessageBox(NULL, msg, "Info", MB_OK)
+#else
+#define PRINT(msg) printf("%s", msg)
+#endif
+
 // logging
-#define LFATAL(st, nc) do { printf("Error in %s: %d", st, nc); exit(nc); } while(0)
+#define LFATAL(st, nc) do { PRINT(st); exit(nc); } while(0)
 
 #ifdef DEBUG
 #define LDEBUG printf

@@ -4,10 +4,10 @@
 int main(ARGCNV) {
     if (argc > 1) {
         if (strcmp(argv[1], "-h") == 0) {
-            ManualForStart(argcnv);
+            ManualForStart();
             return 0;
         } else if (argc % 2 == 0) {
-            ErrorInvalidArgAmount(argcnv);
+            ErrorInvalidArgAmount();
             return 1;
         }
     }

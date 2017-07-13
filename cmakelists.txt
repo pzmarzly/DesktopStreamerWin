@@ -5,11 +5,15 @@ set(EXECUTABLE_OUTPUT_PATH "build")
 
 set(CMAKE_C_COMPILER "gcc")
 if(NOT CMAKE_BUILD_TYPE)
-  set(CMAKE_BUILD_TYPE Release)
+    set(CMAKE_BUILD_TYPE Release)
 endif()
 set(CMAKE_C_FLAGS "-Wall -Wextra -Wno-comment -Wno-unused-parameter")
 set(CMAKE_C_FLAGS_DEBUG "-DDEBUG")
 set(CMAKE_C_FLAGS_RELEASE "-O3")
+
+if(USE_MESSAGEBOX_GUI)
+    set(CMAKE_C_FLAGS "${StartSources} -DMESSAGEBOX_GUI")
+endif()
 
 list(APPEND CommonSources
     "src/config.h"
