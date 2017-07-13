@@ -31,11 +31,14 @@ Recommended:
 
 Add all of them to PATH, then call:
 
+    rem (remove build directory first, if you have it)
     mkdir build
     cmake -G Ninja -DCMAKE_BUILD_TYPE=Release
     ninja
 
 If you don't use ninja, adjust your commands.
+
+I've included Visual Studio Code settings for quick building with Ctrl-Shift-B
 
 # Limitations
 
