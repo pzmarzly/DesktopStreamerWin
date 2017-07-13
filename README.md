@@ -8,9 +8,11 @@ This is my first C project. It uses WinAPI, OpenMP and cmake. I wrote a helper l
 
 # Installing
 
-Install VLC. Then download this project's binary file or build it. Place the files anywhere, just make sure to invoke the programs with the same working directory, as it is the place where the config will be stored.
+Install VLC. Then download this project's [binary files](https://github.com/pzmarzly/DesktopStreamerWin/releases/latest) or [build them](#building). Place the files anywhere, just make sure to invoke the programs with the same working directory, as it is the place where the config will be stored.
 
 # Usage
+
+First time you run `start.exe` or `stop.exe`, settings file will be generated and nothing more will be done.
 
 Run `start.exe` to start streaming and notify local devices. Check `start.exe -h` for more information about manual device selection. Run `stop.exe` to stop local VLC.
 
@@ -38,7 +40,7 @@ Add all of them to PATH, then call:
 
 If you don't use ninja, adjust your commands.
 
-I've included Visual Studio Code settings for quick building with Ctrl-Shift-B
+I've included Visual Studio Code settings for quick building with Ctrl-Shift-B.
 
 # Limitations
 
