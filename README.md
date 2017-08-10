@@ -1,3 +1,5 @@
+# Abandoned, should be easy to finish. This program is kind of pointless, though, unless you have UDP packets blocked in local network
+
 # Desktop Streamer (Windows version)
 
 ## C utility to start a desktop stream with VLC and broadcast the fact over TCP
